@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
+
+  describe "grams#edit" do
+    it "should successfully show the edit form if the gram is found" do
+
+    end
+
+    it "should return a 404 error message if the gram is not found" do
+      get :edit,
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   describe "grams#show action" do
     it "should successfully show the page if the gram is found" do
       gram = FactoryGirl.create(:gram)
